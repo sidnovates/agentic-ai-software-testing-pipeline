@@ -1,0 +1,47 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Environment Variables & Secrets (NEVER COMMIT API KEYS)
+.env
+.env.*
+!.env.example
+
+# Benchmark Datasets (downloadable via python data/download_mbpp.py)
+data/*.json
+
+# Coverage and Testing Artifacts
+.coverage
+coverage.json
+htmlcov/
+.pytest_cache/
+*.coverage.*
+
+# Temporary / Sandbox Directories
+temp/
+tmp/
+
+# LaTeX Build Artifacts (Keep report.tex and image assets)
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz
+report/*.bbl
+report/*.blg
+report/*.xdv
+
+# OS and Editor Artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
