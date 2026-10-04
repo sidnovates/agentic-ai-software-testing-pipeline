@@ -199,68 +199,177 @@
 \begin{document}
 % ============================================================
 
-% ────────────────────────────────────────────────────────────
-%  TITLE PAGE
-% ────────────────────────────────────────────────────────────
+% % ────────────────────────────────────────────────────────────
+% %  TITLE PAGE
+% % ────────────────────────────────────────────────────────────
+% \begin{titlepage}
+% \begin{center}
+
+% \vspace*{12mm}
+% {\color{AccentA}\rule{\linewidth}{2pt}}
+% \vspace{5mm}
+
+% {\Large\bfseries\color{AccentA}
+%   International Institute of Information Technology, Bangalore}\\[3mm]
+% {\normalsize\color{gray} Department of Computer Science and Engineering}
+
+% \vspace{8mm}
+% {\color{AccentB}\rule{0.55\linewidth}{1pt}}
+% \vspace{10mm}
+
+% {\fontsize{21}{27}\selectfont\bfseries\color{SectionColor}
+%   Agentic AI Software Testing Pipeline}\\[4mm]
+% {\Large\bfseries\color{AccentB}
+%   Coverage-Guided Unit Test Generation}
+
+% \vspace{8mm}
+% {\color{AccentA}\rule{0.55\linewidth}{1pt}}
+% \vspace{10mm}
+
+% \begin{tcolorbox}[
+%   enhanced,
+%   colback=BoxBg, colframe=AccentA,
+%   colbacktitle=AccentA, coltitle=white,
+%   fonttitle=\bfseries, title={Course Information},
+%   boxrule=0.6pt, arc=4pt, width=0.78\linewidth
+% ]
+% \begin{tabular}{@{}ll@{}}
+%   \textbf{Course}  & CSE731: Software Testing              \\[2pt]
+%   \textbf{Project} & Mid-Term Project, Term I (2026--27)   \\[2pt]
+%   \textbf{Dataset} & MBPP (Most Basic Python Problems)     \\[2pt]
+%   \textbf{Model}   & NVIDIA Llama-3.1-Nemotron-70B-Instruct \\
+% \end{tabular}
+% \end{tcolorbox}
+
+% \vspace{10mm}
+
+% {\large\bfseries\color{SectionColor} Team Members}\\[5mm]
+% \begin{tabular}{cc}
+%   \toprule
+%   \rowcolor{AccentA!10}
+%   \textbf{Name} & \textbf{Roll Number} \\
+%   \midrule
+%   Name of Member 1 & IMT2023XXX \\  % TODO: replace
+%   Name of Member 2 & IMT2023YYY \\  % TODO: replace
+%   \bottomrule
+% \end{tabular}
+
+% \vfill
+% {\color{AccentA}\rule{\linewidth}{2pt}}\\[2mm]
+% {\small\color{gray} Submitted: October 2026}
+
+% \end{center}
+% \end{titlepage}
+% ---------- Colours (change these to match your report) ----------
+\definecolor{AccentA}{HTML}{1F3A5F}      % deep navy
+\definecolor{AccentB}{HTML}{F28C28}      % warm orange
+\definecolor{SectionColor}{HTML}{1B2A41}
+\definecolor{BoxBg}{HTML}{F4F6FA}
+
+% ---------- Colours (same theme) ----------
+\definecolor{AccentA}{HTML}{1F3A5F}      % deep navy
+\definecolor{AccentB}{HTML}{F28C28}      % warm orange
+\definecolor{SectionColor}{HTML}{1B2A41}
+\definecolor{BoxBg}{HTML}{F4F6FA}
+ 
+ 
 \begin{titlepage}
+\thispagestyle{empty}
+ 
+% ---------- Background + banner content ----------
+\begin{tikzpicture}[remember picture,overlay]
+  % hero banner
+  \fill[AccentA] (current page.north west) rectangle ([yshift=-9.2cm]current page.north east);
+  \fill[AccentB] ([yshift=-9.2cm]current page.north west) rectangle ([yshift=-9.45cm]current page.north east);
+ 
+  % decorative shapes
+  \fill[white,opacity=0.07] ([xshift=-1cm,yshift=-1cm]current page.north east) circle (3.2cm);
+  \fill[white,opacity=0.05] ([xshift=1cm,yshift=-8.2cm]current page.north west) circle (2.2cm);
+  \fill[AccentB,opacity=0.45] ([xshift=-3.2cm,yshift=-7.6cm]current page.north east) circle (0.45cm);
+  \draw[AccentB,opacity=0.6,line width=1.2pt] ([xshift=-2.2cm,yshift=-2.8cm]current page.north east) circle (0.7cm);
+  \begin{scope}[shift={(current page.north west)}]
+    \foreach \x in {0,...,5}{\foreach \y in {0,...,3}{
+      \fill[white,opacity=0.25] (1.6+\x*0.4,-1.4-\y*0.4) circle (1.3pt);}}
+  \end{scope}
+ 
+  % banner text
+  \node[white,align=center,text width=0.86\paperwidth] at ([yshift=-4.9cm]current page.north) {
+    {\small\bfseries\color{AccentB}\textsc{CSE731 \;\textbullet\; Software Testing \;\textbullet\; Mid-Term Project}}\\[7mm]
+    {\fontsize{30}{36}\selectfont\bfseries Agentic AI Software\\[1mm] Testing Pipeline}\\[6mm]
+    {\color{AccentB}\rule{3.2cm}{2.5pt}}\\[6mm]
+    {\Large\itshape Coverage-Guided Unit Test Generation}
+  };
+ 
+  % footer
+  \fill[AccentB] (current page.south west) rectangle ([yshift=0.2cm]current page.south east);
+  \fill[AccentA] ([yshift=0.2cm]current page.south west) rectangle ([yshift=1.9cm]current page.south east);
+  \node[white] at ([yshift=1.05cm]current page.south)
+    {\small CSE731: Software Testing \quad\textbullet\quad Term I (2026--27) \quad\textbullet\quad October 2026};
+\end{tikzpicture}
+ 
 \begin{center}
-
-\vspace*{12mm}
-{\color{AccentA}\rule{\linewidth}{2pt}}
-\vspace{5mm}
-
-{\Large\bfseries\color{AccentA}
-  International Institute of Information Technology, Bangalore}\\[3mm]
-{\normalsize\color{gray} Department of Computer Science and Engineering}
-
-\vspace{8mm}
-{\color{AccentB}\rule{0.55\linewidth}{1pt}}
-\vspace{10mm}
-
-{\fontsize{21}{27}\selectfont\bfseries\color{SectionColor}
-  Agentic AI Software Testing Pipeline}\\[4mm]
-{\Large\bfseries\color{AccentB}
-  Coverage-Guided Unit Test Generation}
-
-\vspace{8mm}
-{\color{AccentA}\rule{0.55\linewidth}{1pt}}
-\vspace{10mm}
-
+\vspace*{8.6cm}
+ 
+% ---------- Project details ----------
+{\large\bfseries\color{SectionColor}\textsc{Project Details}}\\[2mm]
+{\color{AccentB}\rule{1.5cm}{1.5pt}}\\[5mm]
+ 
 \begin{tcolorbox}[
-  enhanced,
-  colback=BoxBg, colframe=AccentA,
-  colbacktitle=AccentA, coltitle=white,
-  fonttitle=\bfseries, title={Course Information},
-  boxrule=0.6pt, arc=4pt, width=0.78\linewidth
+  enhanced, width=0.86\linewidth,
+  colback=BoxBg, colframe=AccentA, boxrule=0.6pt, arc=4pt,
+  borderline west={4pt}{0pt}{AccentB},
+  drop shadow=black!20, left=12pt, right=12pt, top=8pt, bottom=8pt
 ]
+\renewcommand{\arraystretch}{1.6}
 \begin{tabular}{@{}ll@{}}
-  \textbf{Course}  & CSE731: Software Testing              \\[2pt]
-  \textbf{Project} & Mid-Term Project, Term I (2026--27)   \\[2pt]
-  \textbf{Dataset} & MBPP (Most Basic Python Problems)     \\[2pt]
-  \textbf{Model}   & NVIDIA Llama-3.1-Nemotron-70B-Instruct \\
+  \textbf{\color{AccentA}Course}  & CSE731: Software Testing \\
+  \textbf{\color{AccentA}Project} & Mid-Term Project, Term I (2026--27) \\
+  \textbf{\color{AccentA}Dataset} & MBPP (Most Basic Python Problems) \\
+  \textbf{\color{AccentA}Model}   & NVIDIA Llama-3.1-Nemotron-70B-Instruct \\
 \end{tabular}
 \end{tcolorbox}
 
-\vspace{10mm}
+ 
+\vspace{5mm}
+ 
+% ---------- Team ----------
+{\large\bfseries\color{SectionColor}\textsc{Team Members}}\\[2mm]
+{\color{AccentB}\rule{1.5cm}{1.5pt}}\\[5mm]
+ 
+\begin{minipage}{0.44\linewidth}
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=AccentA!30, boxrule=0.5pt, arc=4pt,
+  borderline west={4pt}{0pt}{AccentA}, drop shadow=black!15,
+  halign=left, left=10pt
+]
+{\large\bfseries\color{SectionColor} Siddharth Anil}\\[1mm]
+{\color{AccentB}\bfseries IMT2023503}
+\end{tcolorbox}
+\end{minipage}\hspace{6mm}
+\begin{minipage}{0.44\linewidth}
+\begin{tcolorbox}[
+  enhanced, colback=white, colframe=AccentA!30, boxrule=0.5pt, arc=4pt,
+  borderline west={4pt}{0pt}{AccentA}, drop shadow=black!15,
+  halign=left, left=10pt
+]
+{\large\bfseries\color{SectionColor} Pranay Kelotra}\\[1mm]
+{\color{AccentB}\bfseries IMT2023563}
+\end{tcolorbox}
+\end{minipage}
 
-{\large\bfseries\color{SectionColor} Team Members}\\[5mm]
-\begin{tabular}{cc}
-  \toprule
-  \rowcolor{AccentA!10}
-  \textbf{Name} & \textbf{Roll Number} \\
-  \midrule
-  Name of Member 1 & IMT2023XXX \\  % TODO: replace
-  Name of Member 2 & IMT2023YYY \\  % TODO: replace
-  \bottomrule
-\end{tabular}
+ \vspace{35mm}
+\begin{tcolorbox}[
+  enhanced, width=0.92\linewidth,
+  colback=white, colframe=AccentA!30, boxrule=0.5pt, arc=4pt,
+  borderline west={4pt}{0pt}{AccentA}, drop shadow=black!15,
+  halign=center, left=6pt, right=6pt, top=5pt, bottom=5pt
+]
+\href{https://github.com/sidnovates/agentic-ai-software-testing-pipeline}{\texttt{\footnotesize https://github.com/sidnovates/agentic-ai-software-testing-pipeline}}
+\end{tcolorbox}
 
-\vfill
-{\color{AccentA}\rule{\linewidth}{2pt}}\\[2mm]
-{\small\color{gray} Submitted: October 2026}
-
+ 
 \end{center}
 \end{titlepage}
-
 % ────────────────────────────────────────────────────────────
 \tableofcontents
 \newpage
@@ -311,94 +420,156 @@ python main.py --task task_id
 
 The pipeline then loads the selected task from
 \texttt{data/sanitized-mbpp.json}.
-\clearpage
 \subsection{Pipeline Architecture}
-
-Figure~\ref{fig:pipeline} shows the complete data flow and execution sequence across the three agents.
+% \clearpage
 
 % ─── PIPELINE DIAGRAM ──────────────────────────────────────
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[
   font=\small,
-  node distance=11mm and 26mm,
   agent/.style={
-    rectangle, rounded corners=5pt,
-    minimum width=58mm, minimum height=12.5mm,
-    text centered, text width=56mm,
+    rectangle, rounded corners=4pt,
+    minimum width=62mm, minimum height=9.5mm,
+    text centered, text width=60mm,
     draw=AccentA, fill=AccentA!12, thick
   },
   data/.style={
     rectangle, rounded corners=4pt,
-    minimum width=54mm, minimum height=11.5mm,
-    text centered, text width=52mm,
+    minimum width=58mm, minimum height=8.5mm,
+    text centered, text width=56mm,
     draw=AccentB, fill=AccentB!10, thick
   },
-  result/.style={
+  runbox/.style={
     rectangle, rounded corners=4pt,
-    minimum width=46mm, minimum height=11.5mm,
-    text centered, text width=44mm,
-    draw=AccentC, fill=AccentC!12, thick
+    minimum width=54mm, minimum height=9.5mm,
+    text centered, text width=52mm,
+    draw=AccentA!80, fill=AccentA!8, thick
+  },
+  metric/.style={
+    rectangle, rounded corners=4pt,
+    minimum width=54mm, minimum height=9mm,
+    text centered, text width=52mm,
+    draw=AccentC, fill=AccentC!14, thick
   },
   verdict/.style={
-    rectangle, rounded corners=6pt,
-    minimum width=62mm, minimum height=13mm,
-    text centered, text width=60mm,
-    draw=AccentB, fill=AccentB!22, thick, font=\small\bfseries
+    rectangle, rounded corners=5pt,
+    minimum width=84mm, minimum height=9.5mm,
+    text centered, text width=82mm,
+    draw=AccentB, fill=AccentB!20, thick
   },
-  arr/.style={-{Stealth[length=6pt]}, thick, color=AccentA!80},
-  arr2/.style={-{Stealth[length=6pt]}, thick, color=AccentB!80},
-  lbl/.style={font=\scriptsize, color=gray!80},
+  gate/.style={
+    diamond, aspect=2.4,
+    minimum width=46mm, minimum height=9mm,
+    text centered, text width=42mm,
+    draw=AccentB, fill=AccentB!12, thick, inner sep=0pt
+  },
+  clean/.style={
+    rectangle, rounded corners=5pt,
+    minimum width=54mm, minimum height=9.5mm,
+    text centered, text width=52mm,
+    draw=AccentC, fill=AccentC!20, thick
+  },
+  llm/.style={
+    rectangle, rounded corners=4pt,
+    minimum width=54mm, minimum height=9.5mm,
+    text centered, text width=52mm,
+    draw=AccentB, fill=AccentB!15, thick, dashed
+  },
+  diag/.style={
+    rectangle, rounded corners=4pt,
+    minimum width=54mm, minimum height=9.5mm,
+    text centered, text width=52mm,
+    draw=AccentA, fill=AccentA!10, thick
+  },
+  arr/.style={-{Stealth[length=5pt]}, thick, color=AccentA!80},
 ]
 
-\node[data]   (mbpp) {\textbf{MBPP Dataset}\\[-1pt]
-                       {\scriptsize sanitized-mbpp.json}};
-\node[agent,  below=of mbpp] (cg)
+% 1. Core Agent Pipeline (Top to Bottom)
+\node[data]   (mbpp) {\textbf{MBPP Problem Specification}\\[-1pt]
+                      {\scriptsize \texttt{sanitized-mbpp.json}}};
+\node[agent,  below=5mm of mbpp] (cg)
                       {\textbf{Agent 1: Code Generator}\\[-1pt]
-                       {\scriptsize LLM call, T\,=\,0.2}};
-\node[data,   below=of cg]   (gc)  {Generated Python Function};
-\node[agent,  below=of gc]   (tg)
+                       {\scriptsize LLM Call, $T = 0.2$}};
+\node[data,   below=5mm of cg]   (gc)  {\textbf{Generated Python Function}};
+\node[agent,  below=5mm of gc]   (tg)
                       {\textbf{Agent 2: Test Generator}\\[-1pt]
-                       {\scriptsize LLM call, T\,=\,0.4}};
-\node[data,   below=of tg]   (gt)
-                      {Generated \texttt{unittest} Suite};
-\node[agent,  below=20mm of gt] (ex)
+                       {\scriptsize LLM Call, $T = 0.4$}};
+\node[data,   below=5mm of tg]   (gt)
+                      {\textbf{Generated \texttt{unittest} Suite}};
+\node[agent,  below=5mm of gt]   (ex)
                       {\textbf{Agent 3: Test Executor}\\[-1pt]
-                       {\scriptsize subprocess sandbox}};
+                       {\scriptsize (Subprocess Sandbox)}};
 
-\node[data,   right=28mm of gc] (can)
-                      {Canonical Solution\\[-1pt]
-                       {\scriptsize (ground truth)}};
+% 2. Dual Execution Branches (Split Left & Right)
+\node[runbox, below=9.5mm of ex, xshift=-37mm] (run_gen)
+                      {\textbf{Run on Generated Code}\\[-1pt]
+                       {\scriptsize (+ \texttt{coverage.py --branch})}};
+\node[metric, below=4.5mm of run_gen] (met_gen)
+                      {\textbf{Statement Coverage \%}\\[-1pt]
+                       {\scriptsize Generated Pass Rate \%}};
 
-\node[result, below left=15mm and -6mm of ex]  (cov)
-                      {Statement Coverage \%\\[-1pt]
-                       {\scriptsize coverage.py}};
-\node[result, below right=15mm and -6mm of ex] (val)
-                      {Test Validity \%\\[-1pt]
-                       {\scriptsize on canonical}};
+\node[runbox, below=9.5mm of ex, xshift=37mm] (run_can)
+                      {\textbf{Run on Canonical Code}\\[-1pt]
+                       {\scriptsize (Ground-Truth Reference)}};
+\node[metric, below=4.5mm of run_can] (met_can)
+                      {\textbf{Test Validity \%}\\[-1pt]
+                       {\scriptsize (Pass Rate on Canonical)}};
 
-\node[verdict, below=26mm of ex] (verd)
-                      {Final Verdict\\[-1pt]
-                       {\scriptsize PASSED / PARTIAL\_PASS / FAILED}};
+% 3. Verdict Decision Engine (Merged)
+\node[verdict, below=11mm of ex |- met_gen.south] (verd)
+                      {\textbf{Verdict Decision Engine}\\[-1pt]
+                       {\scriptsize \texttt{PASSED} / \texttt{PARTIAL\_PASS} / \texttt{FAILED} / \texttt{LOW\_VALIDITY} / \texttt{TIMEOUT}}};
 
-\draw[arr]  (mbpp) -- (cg);
-\draw[arr]  (cg)   -- (gc);
-\draw[arr]  (gc)   -- (tg);
-\draw[arr]  (tg)   -- (gt);
-\draw[arr]  (gt)   -- (ex);
-\draw[arr2] (can)  -- (ex);
-\draw[arr]  (ex)   -- (cov);
-\draw[arr]  (ex)   -- (val);
-\draw[arr]  (cov)  -- (verd);
-\draw[arr]  (val)  -- (verd);
+% 4. Triage Gate
+\node[gate,   below=5.5mm of verd] (gate)
+                      {\textbf{Triage Gate}\\[-1pt]
+                       {\scriptsize (Failures?)}};
+
+% 5. Triage Outcomes
+\node[clean,  below=9mm of gate, xshift=-37mm] (p_clean)
+                      {\textbf{Offlline Complete}\\[-1pt]
+                       {\scriptsize }};
+\node[llm,    below=9mm of gate, xshift=37mm] (p_llm)
+                      {\textbf{Run Tests + LLM Call}\\[-1pt]
+                       {\scriptsize }};
+
+
+% Connections
+\draw[arr] (mbpp) -- (cg);
+\draw[arr] (cg)   -- (gc);
+\draw[arr] (gc)   -- (tg);
+\draw[arr] (tg)   -- (gt);
+\draw[arr] (gt)   -- (ex);
+
+% Dual execution fork: ex -> run_gen & run_can
+\draw[thick, color=AccentA!80] (ex.south) -- ++(0,-3.5mm) coordinate (fork);
+\draw[arr] (fork) -| (run_gen.north);
+\draw[arr] (fork) -| (run_can.north);
+
+\draw[arr] (run_gen) -- (met_gen);
+\draw[arr] (run_can) -- (met_can);
+
+% Metrics join: met_gen & met_can -> verd
+\draw[thick, color=AccentA!80] (met_gen.south) -- ++(0,-3.5mm) coordinate (join_l);
+\draw[thick, color=AccentA!80] (met_can.south) -- ++(0,-3.5mm) coordinate (join_r);
+\draw[thick, color=AccentA!80] (join_l) -- (join_r);
+\draw[arr] (ex |- join_l) -- (verd.north);
+
+\draw[arr] (verd) -- (gate);
+
+% Triage gate branches
+\draw[arr] (gate.west) -| node[above, font=\scriptsize\bfseries, color=AccentC!90, pos=0.35]{No Failures} (p_clean.north);
+\draw[arr] (gate.east) -| node[above, font=\scriptsize\bfseries, color=AccentB!90, pos=0.35]{Failures Exist} (p_llm.north);
+
+% \draw[arr] (p_llm) -- (p_diag);
 
 \end{tikzpicture}
-\caption{End-to-end Agentic AI Unit Testing Pipeline.}
+\caption{End-to-end Agentic AI Unit Testing Pipeline architecture showing dual-execution verification and token-optimised failure triage.}
 \label{fig:pipeline}
 \end{figure}
 
-\clearpage
-
+% \clearpage
 % ─── AGENTS ────────────────────────────────────────────────
 \subsection{Agent 1: Code Generator}
 
@@ -425,7 +596,8 @@ Write the complete Python function implementation:
 \end{promptbox}
 
 \vspace{2mm}
-\textbf{File:} \texttt{agents/code\_generator.py}
+ \textbf{File:} \texttt{agents/code\_generator.py}
+
 
 \begin{figure}[H]
 \centering
@@ -434,13 +606,13 @@ Write the complete Python function implementation:
 \label{fig:agent1}
 \end{figure}
 
-% ─────────────────────────────────────────────────────────────
 \subsection{Agent 2: Test Generator}
 
 The Test Generator receives the original prompt and the code from Agent~1.
 It generates a \texttt{unittest.TestCase} suite targeting \textbf{maximum statement and
 branch coverage}.
 
+% ─────────────────────────────────────────────────────────────
 \begin{promptbox}{Agent 2 -- System Prompt}
 You are an expert Software Test Engineer.
 Write unit tests using Python's standard `unittest` framework.
@@ -467,19 +639,21 @@ to achieve 100% statement and branch coverage.
 \vspace{2mm}
 \textbf{File:} \texttt{agents/test\_generator.py}
 
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{Buggy/2Buggy.png}
 \caption{Agent 2 output -- generated unittest suite (Task \#2).}
 \label{fig:agent2}
 \end{figure}
+% Figure~\ref{fig:pipeline} shows the complete data flow through the system.
 
 % ─────────────────────────────────────────────────────────────
-\subsection{Agent 3: Test Executor and Diagnostic Analyzer}
+\subsection{Agent 3: Test Executor}
 
-Agent 3 is divided into two clearly separated phases:
+Agent 3 is divided into two phases:
 
-\textbf{Phase 1 --- Offline Execution (no LLM tokens consumed).}
+\textbf{Phase 1 --- Offline Execution :}\\
 The agent writes the generated code and test suite into a temporary isolated
 directory (\texttt{tempfile.TemporaryDirectory}) and executes them in a child
 \texttt{subprocess}, ensuring no untrusted code runs in the host process.
@@ -497,13 +671,13 @@ Tests are run twice:
 All per-test outcomes (pass, fail, error) and their exact assertion tracebacks
 are captured. A 5-second timeout guards against infinite loops.
 
-\textbf{Phase 2 --- Token-Optimised LLM Diagnostic (triggered only on failure).}
+\textbf{Phase 2 --- LLM Diagnostic (triggered only on failure).}
 After offline execution, a triage gate checks whether any tests failed.
-If all tests pass on both solutions, the LLM is \emph{never} called --- zero
-tokens are consumed. Only when failures exist does the system send a minimal,
+If all tests pass on both solutions, the LLM is \emph{never} called. Only when failures exist does the system send a minimal,
 targeted payload to the LLM to diagnose the root cause. The payload is
 chosen based on which code failed, as described in
 Table~\ref{tab:triage}.
+
 
 \begin{table}[H]
 \centering
@@ -518,94 +692,20 @@ Both solutions fail the same test &
   Problem statement + failing test + error &
   Test case is likely wrong or hallucinated \\
 \addlinespace
-Canonical fails,\newline generated passes &
+Canonical fails,\newline Generated passes &
   Problem statement + canonical code + failing test + error &
-  Canonical code missed an edge case (e.g.\ negative inputs) \\
+  Canonical code missed an edge case. \\
 \addlinespace
 Generated fails,\newline canonical passes &
   Problem statement + generated code + failing test + error &
   Bug or missing logic in the generated code \\
 \addlinespace
 All tests pass &
-  \emph{Nothing (0 tokens)} &
+  \emph{Nothing} &
   No diagnosis needed \\
 \bottomrule
 \end{tabular}
 \end{table}
-
-Figure~\ref{fig:executor} shows the complete flow of Agent 3.
-
-% ─── EXECUTOR FLOWCHART ──────────────────────────────────────
-\begin{figure}[H]
-\centering
-\begin{tikzpicture}[
-  font=\small,
-  node distance=7mm and 22mm,
-  proc/.style={
-    rectangle, rounded corners=4pt,
-    minimum width=60mm, minimum height=10mm,
-    text centered, text width=58mm,
-    draw=AccentA, fill=AccentA!10, thick
-  },
-  dec/.style={
-    diamond, aspect=2.7,
-    minimum width=62mm, minimum height=10mm,
-    text centered, text width=58mm,
-    draw=AccentB, fill=AccentB!10, thick, inner sep=0pt
-  },
-  term/.style={
-    rectangle, rounded corners=8pt,
-    minimum width=50mm, minimum height=10mm,
-    text centered, text width=48mm,
-    draw=AccentC, fill=AccentC!15, thick
-  },
-  termhalt/.style={
-    rectangle, rounded corners=8pt,
-    minimum width=50mm, minimum height=10mm,
-    text centered, text width=48mm,
-    draw=AccentB!80, fill=AccentB!15, thick
-  },
-  arr/.style={-{Stealth[length=5pt]}, thick, color=gray!65},
-  yes/.style={font=\scriptsize\bfseries, color=AccentC!80},
-  no/.style={font=\scriptsize\bfseries, color=AccentB!80},
-]
-
-\node[proc] (p1) {Write files to \texttt{tempdir}};
-\node[proc, below=of p1] (p2) {Run tests on \textbf{canonical} solution};
-\node[proc, below=of p2] (p3) {Run tests on \textbf{generated} code + \texttt{coverage.py}};
-\node[proc, below=of p3] (p4) {Parse results \& \texttt{coverage.json}};
-
-\node[dec,  below=9mm of p4]   (d1) {Timed out?};
-\node[termhalt, right=16mm of d1] (t1) {\textbf{\texttt{TIMEOUT}}\\\scriptsize Execution aborted: infinite loop guard (0 tokens)};
-
-\node[dec,  below=9mm of d1]   (d2) {Validity $<$ 50\%?};
-\node[term, right=16mm of d2]  (t2) {\textbf{\texttt{LOW\_TEST\_VALIDITY}}\\\scriptsize (LLM called)};
-
-\node[dec,  below=9mm of d2]   (d3) {All tests failed?};
-\node[term, right=16mm of d3]  (t3) {\textbf{\texttt{FAILED}}\\\scriptsize (LLM called)};
-
-\node[dec,  below=9mm of d3]   (d4) {Some tests failed?};
-\node[term, right=16mm of d4]  (t4) {\textbf{\texttt{PARTIAL\_PASS}}\\\scriptsize (LLM called)};
-
-\node[term, below=9mm of d4]   (t5) {\textbf{\texttt{PASSED}}};
-
-\draw[arr] (p1) -- (p2);
-\draw[arr] (p2) -- (p3);
-\draw[arr] (p3) -- (p4);
-\draw[arr] (p4) -- (d1);
-\draw[arr] (d1) -- node[yes, above]{Yes} (t1);
-\draw[arr] (d1) -- node[no,  right]{No}  (d2);
-\draw[arr] (d2) -- node[yes, above]{Yes} (t2);
-\draw[arr] (d2) -- node[no,  right]{No}  (d3);
-\draw[arr] (d3) -- node[yes, above]{Yes} (t3);
-\draw[arr] (d3) -- node[no,  right]{No}  (d4);
-\draw[arr] (d4) -- node[yes, above]{Yes} (t4);
-\draw[arr] (d4) -- node[no,  right]{No}  (t5);
-
-\end{tikzpicture}
-\caption{Test Executor (Agent 3) -- internal verdict decision flowchart.}
-\label{fig:executor}
-\end{figure}
 
 \subsubsection{Results for Demo Run (Task \#2)}
 
@@ -625,6 +725,84 @@ Figure~\ref{fig:executor} shows the complete flow of Agent 3.
 \label{fig:llm-verdict}
 \end{figure}
 
+
+% Figure~\ref{fig:executor} shows the internal verdict decision logic.
+
+
+% ─── EXECUTOR FLOWCHART ──────────────────────────────────────
+\begin{figure}[!htbp]
+\centering
+\begin{tikzpicture}[
+  font=\small,
+  node distance=5.5mm and 20mm,
+  proc/.style={
+    rectangle, rounded corners=4pt,
+    minimum width=58mm, minimum height=9.5mm,
+    text centered, text width=56mm,
+    draw=AccentA, fill=AccentA!10, thick
+  },
+  dec/.style={
+    diamond, aspect=2.7,
+    minimum width=60mm, minimum height=9.5mm,
+    text centered, text width=56mm,
+    draw=AccentB, fill=AccentB!10, thick, inner sep=0pt
+  },
+  term/.style={
+    rectangle, rounded corners=6pt,
+    minimum width=50mm, minimum height=9.5mm,
+    text centered, text width=48mm,
+    draw=AccentC, fill=AccentC!15, thick
+  },
+  termhalt/.style={
+    rectangle, rounded corners=6pt,
+    minimum width=50mm, minimum height=9.5mm,
+    text centered, text width=48mm,
+    draw=AccentB!80, fill=AccentB!15, thick
+  },
+  arr/.style={-{Stealth[length=5pt]}, thick, color=gray!65},
+  yes/.style={font=\scriptsize\bfseries, color=AccentC!80},
+  no/.style={font=\scriptsize\bfseries, color=AccentB!80},
+]
+
+\node[proc] (p1) {Write files to \texttt{tempdir}};
+\node[proc, below=of p1] (p2) {Run tests on \textbf{canonical} solution};
+\node[proc, below=of p2] (p3) {Run tests on \textbf{generated} code + \texttt{coverage.py}};
+\node[proc, below=of p3] (p4) {Parse results \& \texttt{coverage.json}};
+
+\node[dec,  below=7mm of p4]  (d1) {Timed out?};
+\node[termhalt, right=14mm of d1] (t1) {\textbf{\texttt{TIMEOUT}}\\\scriptsize Execution aborted: infinite loop guard (0 tokens)};
+
+\node[dec,  below=7mm of d1]  (d2) {Validity $<$ 50\%?};
+\node[term, right=14mm of d2]  (t2) {\textbf{\texttt{LOW\_TEST\_VALIDITY}}\\\scriptsize (LLM called)};
+
+\node[dec,  below=7mm of d2]  (d3) {All tests failed?};
+\node[term, right=14mm of d3]  (t3) {\textbf{\texttt{FAILED}}\\\scriptsize (LLM called)};
+
+\node[dec,  below=7mm of d3]  (d4) {Some tests failed?};
+\node[term, right=14mm of d4]  (t4) {\textbf{\texttt{PARTIAL\_PASS}}\\\scriptsize (LLM called)};
+
+\node[term, below=7mm of d4]  (t5) {\textbf{\texttt{PASSED}}};
+
+\draw[arr] (p1) -- (p2);
+\draw[arr] (p2) -- (p3);
+\draw[arr] (p3) -- (p4);
+\draw[arr] (p4) -- (d1);
+\draw[arr] (d1) -- node[yes, above]{Yes} (t1);
+\draw[arr] (d1) -- node[no,  right]{No}  (d2);
+\draw[arr] (d2) -- node[yes, above]{Yes} (t2);
+\draw[arr] (d2) -- node[no,  right]{No}  (d3);
+\draw[arr] (d3) -- node[yes, above]{Yes} (t3);
+\draw[arr] (d3) -- node[no,  right]{No}  (d4);
+\draw[arr] (d4) -- node[yes, above]{Yes} (t4);
+\draw[arr] (d4) -- node[no,  right]{No}  (t5);
+
+\end{tikzpicture}
+\caption{Test Executor (Agent 3) -- internal verdict decision flowchart.}
+\label{fig:executor}
+\end{figure}
+
+
+\clearpage
 % ============================================================
 \section{LLM Configuration and Parameters}
 \label{sec:llm}
@@ -640,7 +818,7 @@ Figure~\ref{fig:executor} shows the complete flow of Agent 3.
 \midrule
 Model name               & \texttt{nvidia/llama-3.1-nemotron-70b-instruct} \\
 API endpoint             & \texttt{https://integrate.api.nvidia.com/v1}    \\
-API compatibility        & OpenAI-compatible (via \texttt{openai} Python SDK) \\
+API compatibility        & OpenAI-compatible (via openai Python SDK) \\
 Code gen.\ temperature   & 0.2 \\
 Test gen.\ temperature   & 0.4 \\
 LLM verdict temperature  & 0.2 \\
@@ -655,93 +833,93 @@ the \texttt{openai} SDK configured for NVIDIA's hosted endpoint. Any
 OpenAI-compatible endpoint (e.g.\ OpenRouter) can be substituted by updating
 \texttt{NVIDIA\_BASE\_URL} in the \texttt{.env} file.
 
-% ============================================================
-\section{Code and Test Case Format}
-\label{sec:format}
-% ============================================================
+% % ============================================================
+% \section{Code and Test Case Format}
+% \label{sec:format}
+% % ============================================================
 
-\subsection{Generated Code}
+% \subsection{Generated Code}
 
-Agent~1 produces a single, self-contained Python function. The LLM is instructed
-to return only a \verb|```python ... ```| Markdown block; the
-\texttt{LLMClient.extract\_code()} helper strips the fences via regex, leaving
-clean, directly executable Python written to \texttt{solution.py} in the sandbox.
+% Agent~1 produces a single, self-contained Python function. The LLM is instructed
+% to return only a \verb|```python ... ```| Markdown block; the
+% \texttt{LLMClient.extract\_code()} helper strips the fences via regex, leaving
+% clean, directly executable Python written to \texttt{solution.py} in the sandbox.
 
-\begin{todobox}
-Replace the placeholder listing below with the \textbf{actual generated Python
-function} from your terminal run. Copy from the console block under
-\texttt{--- Generated Code ---}.
-\end{todobox}
+% \begin{todobox}
+% Replace the placeholder listing below with the \textbf{actual generated Python
+% function} from your terminal run. Copy from the console block under
+% \texttt{--- Generated Code ---}.
+% \end{todobox}
 
-\begin{lstlisting}[style=codestyle,
-  caption={Generated code -- Task \#2 (replace with your actual output)}]
-# TODO: Paste the actual generated function here.
-def similar_elements(test_tup1, test_tup2):
-    """Find similar elements from two tuples."""
-    result = tuple(set(test_tup1) & set(test_tup2))
-    return result
-\end{lstlisting}
+% \begin{lstlisting}[style=codestyle,
+%   caption={Generated code -- Task \#2 (replace with your actual output)}]
+% # TODO: Paste the actual generated function here.
+% def similar_elements(test_tup1, test_tup2):
+%     """Find similar elements from two tuples."""
+%     result = tuple(set(test_tup1) & set(test_tup2))
+%     return result
+% \end{lstlisting}
 
-\subsection{Generated Test Suite}
+% \subsection{Generated Test Suite}
 
-Agent~2 produces a \texttt{unittest.TestCase} subclass. The executor prepends
-\texttt{from solution import *} automatically if the test file does not already
-contain an explicit import.
+% Agent~2 produces a \texttt{unittest.TestCase} subclass. The executor prepends
+% \texttt{from solution import *} automatically if the test file does not already
+% contain an explicit import.
 
-\begin{todobox}
-Replace the placeholder listing below with the \textbf{actual generated test
-class} from your terminal run. Copy from the console block under
-\texttt{--- Generated Tests ---}.
-\end{todobox}
+% \begin{todobox}
+% Replace the placeholder listing below with the \textbf{actual generated test
+% class} from your terminal run. Copy from the console block under
+% \texttt{--- Generated Tests ---}.
+% \end{todobox}
 
-\begin{lstlisting}[style=codestyle,
-  caption={Generated test suite -- Task \#2 (replace with your actual output)}]
-# TODO: Paste the actual generated test class here.
-import unittest
+% \begin{lstlisting}[style=codestyle,
+%   caption={Generated test suite -- Task \#2 (replace with your actual output)}]
+% # TODO: Paste the actual generated test class here.
+% import unittest
 
-class TestSolution(unittest.TestCase):
+% class TestSolution(unittest.TestCase):
 
-    def test_common_elements(self):
-        self.assertEqual(
-            set(similar_elements((3, 4, 5, 6), (5, 7, 4, 10))),
-            {4, 5}
-        )
+%     def test_common_elements(self):
+%         self.assertEqual(
+%             set(similar_elements((3, 4, 5, 6), (5, 7, 4, 10))),
+%             {4, 5}
+%         )
 
-    def test_no_common_elements(self):
-        self.assertEqual(similar_elements((1, 2), (3, 4)), ())
+%     def test_no_common_elements(self):
+%         self.assertEqual(similar_elements((1, 2), (3, 4)), ())
 
-    def test_identical_tuples(self):
-        result = similar_elements((1, 2, 3), (1, 2, 3))
-        self.assertEqual(set(result), {1, 2, 3})
+%     def test_identical_tuples(self):
+%         result = similar_elements((1, 2, 3), (1, 2, 3))
+%         self.assertEqual(set(result), {1, 2, 3})
 
-    def test_empty_tuples(self):
-        self.assertEqual(similar_elements((), ()), ())
+%     def test_empty_tuples(self):
+%         self.assertEqual(similar_elements((), ()), ())
 
-if __name__ == '__main__':
-    unittest.main(verbosity=2)
-\end{lstlisting}
+% if __name__ == '__main__':
+%     unittest.main(verbosity=2)
+% \end{lstlisting}
 
-\subsection{Verdict Rules}
+% \subsection{Verdict Rules}
 
-\begin{table}[H]
-\centering
-\caption{Verdict Decision Rules}
-\begin{tabularx}{0.88\linewidth}{lX}
-\toprule
-\rowcolor{AccentA!10}
-\textbf{Verdict} & \textbf{Condition} \\
-\midrule
-\texttt{TIMEOUT}             & Subprocess exceeded the 5-second limit \\
-\texttt{LOW\_TEST\_VALIDITY} & Validity on canonical solution $<50\%$  \\
-\texttt{PASSED}              & All tests pass on generated code \\
-\texttt{PARTIAL\_PASS}       & Some (not all) tests pass \\
-\texttt{FAILED}              & Zero tests pass on generated code \\
-\bottomrule
-\end{tabularx}
-\label{tab:verdict}
-\end{table}
+% \begin{table}[H]
+% \centering
+% \caption{Verdict Decision Rules}
+% \begin{tabularx}{0.88\linewidth}{lX}
+% \toprule
+% \rowcolor{AccentA!10}
+% \textbf{Verdict} & \textbf{Condition} \\
+% \midrule
+% \texttt{TIMEOUT}             & Subprocess exceeded the 5-second limit \\
+% \texttt{LOW\_TEST\_VALIDITY} & Validity on canonical solution $<50\%$  \\
+% \texttt{PASSED}              & All tests pass on generated code \\
+% \texttt{PARTIAL\_PASS}       & Some (not all) tests pass \\
+% \texttt{FAILED}              & Zero tests pass on generated code \\
+% \bottomrule
+% \end{tabularx}
+% \label{tab:verdict}
+% \end{table}
 
-% ============================================================
+% % ============================================================
 \section{Execution Results and Metrics}
 \label{sec:results}
 % ============================================================
@@ -775,6 +953,66 @@ Final Verdict            & Rule logic & Categorical outcome
 \label{tab:metrics}
 \end{table}
 
+% \subsection{Results for Demo Run (Test Case 2)}
+
+% % \begin{table}[H]
+% % \centering
+% % \caption{Execution Results -- MBPP Task \#2}
+% % \begin{tabular}{lc}
+% % \toprule
+% % \rowcolor{AccentA!10}
+% % \textbf{Metric} & \textbf{Value} \\
+% % \midrule
+% % Test Validity (pass on canonical) & \texttt{XX.X\%} \\
+% % Statement Coverage (on gen.\ code) & \texttt{XX.X\%} \\
+% % Generated Code Pass Rate & \texttt{XX.X\%} \\
+% % Final Verdict & \texttt{XXXXX} \\
+% % \bottomrule
+% % \end{tabular}
+% % \label{tab:results}
+% % \end{table}
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.95\textwidth]{Buggy/metricsB.png}
+% \caption{Pipeline execution metrics and final verdict for MBPP Task \#2.}
+% \label{fig:metrics}
+% \end{figure}
+
+% \subsection{LLM Verdict}
+
+% After Python execution metrics are computed, an optional step sends them back
+% to the LLM for a qualitative 2--3 sentence assessment:
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.95\textwidth]{Buggy/LLMVErdictB.png}
+% \caption{LLM-based qualitative assessment of the pipeline results for MBPP Task \#2.}
+% \label{fig:llm-verdict}
+% \end{figure}
+% \clearpage
+
+% ============================================================
+\section{Design Decisions}
+\label{sec:design}
+% ============================================================
+
+\begin{itemize}[leftmargin=18pt, itemsep=5pt]
+
+  \item \textbf{Subprocess sandbox.} Agent~3 uses \texttt{tempfile} +
+        \texttt{subprocess} instead of \texttt{exec()} or \texttt{eval()}, so
+        untrusted generated code cannot affect the host process.
+
+  \item \textbf{Dual evaluation.} Tests run against both the canonical solution
+        (validity check) and the generated code (coverage + pass rate).
+
+  \item \textbf{Differentiated temperatures.} Code generation uses $T=0.2$
+        (deterministic, correct output); test generation uses $T=0.4$ (varied,
+        creative output) to maximise test diversity and coverage.
+
+\end{itemize}
+
+
 % ============================================================
 \section{Project Structure}
 \label{sec:structure}
@@ -795,55 +1033,28 @@ Project/
     `-- sanitized-mbpp.json
 \end{outputbox}
 
-\textbf{Dependencies (requirements.txt):}
-\begin{itemize}[leftmargin=18pt, itemsep=2pt]
-  \item \texttt{openai $\geq$ 1.0.0} --- LLM API communication
-  \item \texttt{coverage $\geq$ 7.0.0} --- Statement and branch coverage
-  \item \texttt{python-dotenv $\geq$ 1.0.0} --- Environment variable management
-\end{itemize}
+% \textbf{Dependencies (requirements.txt):}
+% \begin{itemize}[leftmargin=18pt, itemsep=2pt]
+%   \item \texttt{openai $\geq$ 1.0.0} --- LLM API communication
+%   \item \texttt{coverage $\geq$ 7.0.0} --- Statement and branch coverage
+%   \item \texttt{python-dotenv $\geq$ 1.0.0} --- Environment variable management
+% \end{itemize}
+
 
 % ============================================================
-\section{Design Decisions}
-\label{sec:design}
-% ============================================================
+% \section{Conclusion}
+% \label{sec:conclusion}
+% % ============================================================
 
-\begin{itemize}[leftmargin=18pt, itemsep=5pt]
+% This project shows that a compact three-agent pipeline --- built without any
+% third-party orchestration framework --- can meaningfully automate unit test
+% generation and evaluation. Separating code generation, test generation, and test
+% execution into distinct agents, each with tailored prompts and temperature
+% settings, produces tests that achieve high statement coverage and strong test
+% validity scores on MBPP problems.
 
-  \item \textbf{No orchestration frameworks.} The pipeline uses only standard
-        Python, honouring the course requirement to build from first principles.
-
-  \item \textbf{Subprocess sandbox.} Agent~3 uses \texttt{tempfile} +
-        \texttt{subprocess} instead of \texttt{exec()} or \texttt{eval()}, so
-        untrusted generated code cannot affect the host process.
-
-  \item \textbf{Dual evaluation.} Tests run against both the canonical solution
-        (validity check) and the generated code (coverage + pass rate), providing
-        a two-dimensional quality signal.
-
-  \item \textbf{Coverage via \texttt{coverage.py}.} Invoked as a subprocess with
-        \texttt{--branch} mode; its JSON report is parsed to extract percentages
-        reliably.
-
-  \item \textbf{Differentiated temperatures.} Code generation uses $T=0.2$
-        (deterministic, correct output); test generation uses $T=0.4$ (varied,
-        creative output) to maximise test diversity and coverage.
-
-\end{itemize}
-
-% ============================================================
-\section{Conclusion}
-\label{sec:conclusion}
-% ============================================================
-
-This project shows that a compact three-agent pipeline --- built without any
-third-party orchestration framework --- can meaningfully automate unit test
-generation and evaluation. Separating code generation, test generation, and test
-execution into distinct agents, each with tailored prompts and temperature
-settings, produces tests that achieve high statement coverage and strong test
-validity scores on MBPP problems.
-
-The dual-execution strategy and subprocess sandbox ensure both safety and a
-clear two-dimensional quality signal for every pipeline run.
+% The dual-execution strategy and subprocess sandbox ensure both safety and a
+% clear two-dimensional quality signal for every pipeline run.
 
 % ============================================================
 \section{Team Contributions}
@@ -858,17 +1069,27 @@ clear two-dimensional quality signal for every pipeline run.
 \rowcolor{AccentA!10}
 \textbf{Member} & \textbf{Contributions} \\
 \midrule
-% TODO: Replace with actual names and real contributions
-Name of Member 1 &
-  Dataset integration (\texttt{download\_mbpp.py}),
-  \texttt{LLMClient} design,
-  \texttt{CodeGeneratorAgent}, \texttt{TestGeneratorAgent},
-  prompt engineering, \texttt{main.py} \\
+
+Pranay Kelotra &
+  MBPP dataset integration ,
+  \texttt{LLMClient} and API integration,
+  \texttt{CodeGeneratorAgent},
+  prompt design, and pipeline integration \\
+
 \addlinespace
-Name of Member 2 &
-  \texttt{TestExecutorAgent} (subprocess sandbox,
-  \texttt{coverage.py} integration, verdict logic, LLM verdict),
-  testing and debugging, report writing \\
+
+Siddharth Anil &
+  \texttt{TestGeneratorAgent},
+  \texttt{TestExecutorAgent},
+  test execution and coverage analysis,
+  validity and verdict evaluation, and debugging \\
+
+\addlinespace
+
+Both Members &
+  Pipeline design, model selection, experimental evaluation,
+  analysis of results, and report preparation \\
+
 \bottomrule
 \end{tabularx}
 \label{tab:contributions}

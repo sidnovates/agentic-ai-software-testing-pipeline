@@ -6,7 +6,7 @@ class TestGeneratorAgent:
         self.llm = llm_client
 
     def generate_tests(self, prompt: str, generated_code: str, coverage_goal: str = "statement and branch coverage") -> str:
-        """Generates a unittest test suite targeting coverage criteria for the provided code."""
+        
         system_prompt = (
             "You are an expert Software Test Engineer. "
             "Your task is to write unit tests using Python's standard `unittest` framework. "

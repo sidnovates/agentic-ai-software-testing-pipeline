@@ -181,7 +181,7 @@ class TestExecutorAgent:
 
         # Scenario 1: Zero failures -> No LLM tokens consumed!
         if not can_fails and not gen_fails:
-            return "No failures detected. All unit tests passed cleanly on both Canonical and Generated code"
+            return "No failures detected. All unit tests passed cleanly on both Canonical and Generated code."
 
         # Triage failure sets
         both = set(can_fails.keys()) & set(gen_fails.keys())
